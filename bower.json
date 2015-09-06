@@ -1,0 +1,19 @@
+{
+  "name": "budgetrr",
+  "main": "budgetrr.js",
+  "version": "0.0.1",
+  "authors": [
+    "Kai Wegner <kw@o511.de>"
+  ],
+  "description": "Manage your budgets and money - clever!",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

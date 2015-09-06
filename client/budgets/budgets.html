@@ -1,0 +1,48 @@
+<template name="budgetList">
+ {{#each budgets}}
+    {{> budget}}
+  {{/each}}
+
+  {{> yield 'budgetFunctions' }}
+
+  {{> modalAddBudget}}
+</template>
+
+<template name="budget">
+  <button class="btn btn-{{itemType type }}" type="button" data-bugetname="{{name}}" data-budgetid="{{_id}}" data-container="body">
+    <span class="text">{{name}}</span> {{#if hasNew new }}<span class="badge">{{new}}</span>{{/if}}
+  </button>
+</template>
+
+<template name="budgetFunctions">
+  <hr>
+  <button class="btn btn-success addBudget" type="button" data-toggle="modal" data-target="#addBudget">
+    <span class="glyphicon glyphicon-plus"></span>&nbsp;Add new Budget
+  </button>
+  <hr>
+  <div id="budgetCalculations">
+    Amount: {{>colorizeDecimal decimal=budget.amount }} {{#if isDebt}}-{{else}}+{{/if}} {{getBudgetBookingsAmount}} = <span class="budgetSum">{{getBudgetSum}}</span>
+  </div>
+</template>
+
+<template name="colorizeDecimal">
+  {{#if isNegative decimal}}
+    <span style="color:red">{{decimal}}</span>
+  {{else}}
+    <span style="color:green">{{decimal}}</span>
+  {{/if}}
+</template>
+
+<template name="selectaBudget">
+  <h3>Select a budget to view or modify your budgets</h3>
+</template>
+
+<template name="budgetErrors">
+  {{#each errors}}
+    <div class="alert alert-danger {{../contextName}}" role="alert">{{message}}</div>
+  {{/each}}
+</template>
+
+<template name="budget404">
+  <h4>no budget found with that id {{selectedBudget}}! <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true" style="color:red;font-size:2em;vertical-align:middle"></span></h4>
+</template>

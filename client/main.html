@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>budgetrr</title>
+
+  <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+  <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+  <h1>Welcome to budgetrr!</h1>
+</body>
+
+<template name="Layout">
+  <top>
+    {{> yield 'top'}}
+  </top>
+  <hr>
+  <content>
+    {{> yield }}
+  </content>
+
+  <footer>
+    {{> yield 'footer'}}
+  </footer>
+
+</template>

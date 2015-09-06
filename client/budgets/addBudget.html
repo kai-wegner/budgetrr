@@ -1,0 +1,39 @@
+<template name="modalAddBudget">
+  <div class="modal fade" id="addBudget" tabindex="-1" role="dialog" aria-labelledby="addButtonLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="addButtonLabel">Add a new Budget</h4>
+        </div>
+        <div class="modal-body">
+          {{> budgetErrors contextName='addBudget' }}
+          <div class="input-group">
+            <span class="input-group-addon" id="newBudgetName">Budget Name</span>
+            <input type="text" class="form-control" placeholder="Example Budget" aria-describedby="newBudgetName" id="editBudgetName">
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon" id="newBudgetAmount">Amount</span>
+            <input type="text" class="form-control" placeholder="20000" aria-describedby="newBudgetAmount" id="editBudgetAmount">
+          </div>
+          <h5>Type</h5>
+          <div class="input-group">
+            <span class="input-group-addon" id="newBudgetType-Budget"><input type="radio" name="newBudgetType" aria-label="newBudgetType-Budget" value="spendings"></span>
+            <div class="form-control" aria-describedby="newBudgetType-Budget" data-toggle="tooltip" data-placement="top" title="budget amount is added by bookings">
+              <span class="glyphicon glyphicon-plus" style="color:green"></span>&nbsp;Budget
+            </div>
+            <span class="input-group-addon" id="newBudgetType-Debt"><input type="radio" name="newBudgetType" aria-label="newBudgetType-Debt" value="debt"></span>
+            <div class="form-control" aria-describedby="newBudgetType-Budget" data-toggle="tooltip" data-placement="top" title="budget amount is reduced by bookings">
+              <span class="glyphicon glyphicon-minus" style="color:red"></span>&nbsp;Debt
+            </div>
+          </div>
+         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="addBudgetSubmit" type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

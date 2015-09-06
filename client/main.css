@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+body {
+  margin:20px !important;
+}
+
+.budgetSum {
+  text-decoration:underline;
+  font-weight:bold;
+}

@@ -1,0 +1,29 @@
+<template name="bookingList">
+  <table id="bookingTable" class="table table-striped">
+    <thead>
+      <tr>
+         <th data-sortable="true">Name</th>
+         <th data-sortable="true">Amount</th>
+         <th data-sortable="true">Account</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each bookings}}
+        {{> booking}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="booking">
+  <tr>
+    <td><div draggable="true" style="font-size:1.2em;font-weight:bold;" 
+      class="bookingItem">{{name}}</div></td>
+    <td>{{amount}}</td>
+    <td>{{account}}</td>
+  </tr>
+</template>
+
+<template name="noBookings">
+  <h4>all done! <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color:red;font-size:2em;vertical-align:middle"></span></h4>
+</template>
